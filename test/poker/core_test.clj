@@ -6,6 +6,7 @@
 (def hand-two [(card 14 "C") (card 2 "S") (card 4 "S") (card 6 "C") (card 9 "C")])
 
 (def hand-one-pair [(card 2 "S") (card 2 "C") (card 4 "S") (card 6 "C") (card 8 "S")])
+(def hand-two-aces [(card 14 "A") (card 14 "C") (card 2 "S") (card 4 "S") (card 9 "H")])
 (def hand-two-pair [(card 2 "S") (card 2 "C") (card 4 "S") (card 4 "C") (card 8 "S")])
 (def hand-three-of-a-kind [(card 2 "S") (card 2 "C") (card 2 "H") (card 6 "C") (card 7 "S")])
 (def hand-full-house [(card 2 "S") (card 2 "C") (card 2 "D") (card 6 "D") (card 6 "H")])
@@ -64,3 +65,8 @@
     (is (= false (straight-flush hand-straight)))
     (is (= false (straight-flush hand-flush)))
     (is (= true (straight-flush hand-straight-flush)))))
+
+(deftest better-one-pair-test
+  (testing "it knows which pair is better"
+    ; TODO write test
+    ))
