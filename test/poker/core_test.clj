@@ -16,13 +16,10 @@
 (def hand-straight-ace-low [(card 14 "S") (card 2 "S") (card 3 "C") (card 4 "H") (card 5 "S")])
 (def hand-straight-flush [(card 2 "S") (card 3 "S") (card 4 "S") (card 5 "S") (card 6 "S")])
 
-(deftest card-test
-  (testing "cards can be greater than others"
-    (is (< (:rank (card 13 "S")) (:rank (card 14 "S"))))))
-
 (deftest high-card-test
   (testing "high card wins"
-    (is (= hand-two (winner hand-one hand-two)))))
+    (is (= hand-two (winner hand-one hand-two)))
+    (is (= hand-two (winner hand-two hand-one)))))
 
 (deftest one-pair-test
   (testing "it identifies one pair"
@@ -68,5 +65,5 @@
 
 (deftest better-one-pair-test
   (testing "it knows which pair is better"
-    ; TODO write test
-    ))
+    ; TODO this is a false positive, write a better test
+    (is (= hand-two-aces (winner hand-two-aces hand-one)))))

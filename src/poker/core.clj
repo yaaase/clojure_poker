@@ -88,5 +88,5 @@
   "Determine the better of two hands of poker"
   [one two]
   (if (greater-high-card one two)
-    one)
-  two)
+    one
+    two))
